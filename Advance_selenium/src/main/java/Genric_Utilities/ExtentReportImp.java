@@ -1,4 +1,4 @@
-package Genric_Utilities;
+/*package Genric_Utilities;
 
 import java.io.IOException;
 import java.util.Date;
@@ -60,8 +60,8 @@ public class ExtentReportImp  implements ITestListener{
 		// TODO Auto-generated method stub
 		
 	}*/
-	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+	/*public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 		// TODO Auto-generated method stub
 		
 	}
-}
+}*/

@@ -34,7 +34,7 @@ import Pom_Repo.ValidateContactPage;
 import Pom_Repo.ValidationCampaignPage;
 
 //@Listeners(Genric_Utilities.ListenerImp.class)
-@Listeners(Genric_Utilities.ExtentReportImp.class)
+//@Listeners(Genric_Utilities.ExtentReportImp.class)
 public class CreateCampaignTest extends BaseClass {
 
 	//--->I am pulling this-->pull1
