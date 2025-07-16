@@ -3,7 +3,8 @@
 <suite name="Suite">
 	<listeners>
 		<listener class-name="Genric_Utilities.ListenerImp"/>
-	</listeners>
+		<listener class-name="Genric_Utilities.ExtentReportImp"/>
+		</listeners>
   <test thread-count="5" name="Test">
     <classes>
 		<class name="campaign.CreateCampaignTest"/>

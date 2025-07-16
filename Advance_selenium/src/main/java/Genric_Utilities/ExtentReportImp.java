@@ -33,12 +33,7 @@ public class ExtentReportImp  implements ITestListener{
 			}catch(Throwable e) {
 				e.printStackTrace();
 			}
-		try {
-			test.addScreenCaptureFromPath(screenShot);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		test.addScreenCaptureFromPath(screenShot);
 	}
 	public void onTestSkipped(ITestResult result) {
 		test.log(Status.SKIP, result.getMethod().getMethodName());
