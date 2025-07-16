@@ -34,11 +34,12 @@
     </dependency>
 
     <!-- Force commons-compress -->
-   <dependency>
+  <dependency>
     <groupId>org.apache.commons</groupId>
     <artifactId>commons-compress</artifactId>
-    <version>1.21</version>
+    <version>1.21</version> <!--  Use 1.21, known stable with pdfbox/poi -->
 </dependency>
+
 
 
     <!-- Apache POI -->
