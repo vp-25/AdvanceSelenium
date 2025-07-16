@@ -7,7 +7,6 @@
   <artifactId>Advance_selenium</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <!-- Force all libraries to use commons-compress 1.22 -->
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -26,7 +25,7 @@
       <version>4.11.0</version>
     </dependency>
 
-    <!-- Netty (required for Selenium 4.11+) -->
+    <!-- Netty (for Selenium 4.11+) -->
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-all</artifactId>
@@ -39,25 +38,10 @@
       <artifactId>poi</artifactId>
       <version>5.3.0</version>
     </dependency>
-
     <dependency>
       <groupId>org.apache.poi</groupId>
       <artifactId>poi-ooxml</artifactId>
       <version>5.3.0</version>
-    </dependency>
-
-    <!-- WebDriverManager -->
-    <dependency>
-      <groupId>io.github.bonigarcia</groupId>
-      <artifactId>webdrivermanager</artifactId>
-      <version>5.6.2</version>
-    </dependency>
-
-    <!-- Jackson -->
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>2.18.0</version>
     </dependency>
 
     <!-- PDFBox -->
@@ -73,10 +57,25 @@
       </exclusions>
     </dependency>
 
-    <!-- Explicitly add commons-compress using version from dependencyManagement -->
+    <!-- Force correct commons-compress -->
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-compress</artifactId>
+      <version>1.22</version>
+    </dependency>
+
+    <!-- WebDriverManager -->
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>5.6.2</version>
+    </dependency>
+
+    <!-- Jackson -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.18.0</version>
     </dependency>
 
     <!-- MySQL Connector -->
@@ -106,13 +105,34 @@
       <artifactId>log4j-core</artifactId>
       <version>2.20.0</version>
     </dependency>
-
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-api</artifactId>
       <version>2.20.0</version>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Clean any old jar cache -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.6.0</version>
+        <executions>
+          <execution>
+            <id>force-commons-compress</id>
+            <goals>
+              <goal>purge-local-repository</goal>
+            </goals>
+            <configuration>
+              <reResolve>true</reResolve>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 
   <!-- Test Suite Profile -->
   <profiles>
@@ -126,7 +146,7 @@
             <version>3.5.3</version>
             <configuration>
               <suiteXmlFiles>
-                <suiteXmlFile>Batchtestng.xml</suiteXmlFile>
+                <suiteXmlFile>Battchtestng.xml</suiteXmlFile>
               </suiteXmlFiles>
             </configuration>
           </plugin>
