@@ -73,6 +73,12 @@
       </exclusions>
     </dependency>
 
+    <!-- Explicitly add commons-compress using version from dependencyManagement -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-compress</artifactId>
+    </dependency>
+
     <!-- MySQL Connector -->
     <dependency>
       <groupId>com.mysql</groupId>
